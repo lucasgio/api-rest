@@ -1,5 +1,6 @@
 const express = require('express')
 const cors = require("cors");
+const {dbConnection} = require("../database/config");
 
 
 class Server {
@@ -8,7 +9,10 @@ class Server {
         this.app = express();
         this.port = process.env.PORT
         this.informationRoutes = '/api/information'
+        this.getawayRoutes = '/api/getaway'
+        this.peripheralRoutes = '/api/peripheral'
 
+        this.DBConnection();
 
         // Middleware
         this.middleware();
@@ -16,6 +20,11 @@ class Server {
 
         // App routes
         this.routes();
+    }
+
+
+    async DBConnection() {
+        await dbConnection();
     }
 
     middleware() {
@@ -30,6 +39,8 @@ class Server {
 
     routes() {
         this.app.use(this.informationRoutes,require('../routes/info'))
+        this.app.use(this.getawayRoutes,require('../routes/getaway'))
+        this.app.use(this.peripheralRoutes,require('../routes/peripheral'))
     }
 
 
