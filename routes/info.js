@@ -5,7 +5,7 @@ const
         postInformation,
         putInformation,
         deleteInformation
-    } = require("../controllers/information");
+    } = require("../controllers/informationControllers");
 
 
 const route = Router();
