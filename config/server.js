@@ -8,9 +8,9 @@ class Server {
     constructor() {
         this.app = express();
         this.port = process.env.PORT
-        this.informationRoutes = '/api/information'
-        this.getawayRoutes = '/api/getaway'
-        this.peripheralRoutes = '/api/peripheral'
+        this.informationRoutes = '/api/v1/information'
+        this.getawayRoutes = '/api/v1/getaway'
+        this.peripheralRoutes = '/api/v1/peripheral'
 
         this.DBConnection();
 
