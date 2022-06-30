@@ -7,10 +7,10 @@ const Getaway = require('../models/getaway');
 
 
 const getGetaway = async (req = request, res = response) => {
-    const {q, limit = 10} = req.query;
+    //const {q,} = req.query;
 
     const [getaways, total] = await Promise.all([
-        Getaway.find().limit(limit).populate('peripheral'),
+        Getaway.find().populate('peripheral'),
         Getaway.countDocuments()
     ])
 
