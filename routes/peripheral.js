@@ -1,7 +1,7 @@
 const { Router } = require('express');
 const { check } = require('express-validator');
 
-const { postPeripheral } = require('../controllers/peripheralController');
+const { postPeripheral, getPeripheral} = require('../controllers/peripheralController');
 const { checkPeripheralUID } = require("../helpers/bd-validators");
 const fieldValidation = require("../middleware/field-validation");
 
@@ -17,7 +17,7 @@ route.post('/', [
     fieldValidation
 ],postPeripheral);
 
-
+route.get('/',getPeripheral);
 
 
 
