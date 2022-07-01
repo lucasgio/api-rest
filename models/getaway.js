@@ -22,8 +22,8 @@ const getawaySchema = Schema({
     peripheral: [{
         type:Schema.Types.ObjectId,
         ref:'Peripheral',
-        unique:true
     }]
+
 });
 
 
