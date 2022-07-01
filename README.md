@@ -34,7 +34,6 @@ Install api-rest
   cd api-rest
   npm install  
   cp .env.example .env
-  setting your local mongodb ( Mongo Compass )
   npm run dev
 ```
 
