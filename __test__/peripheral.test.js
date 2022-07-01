@@ -20,7 +20,15 @@ describe('Testing peripheral endpoint', function () {
             .expect(201)
             .expect('Content-Type', /json/);
     });
+
+    it('should get all peripheral', async () => {
+        await supertest(server)
+            .get('/api/v1/peripheral')
+            .expect(200)
+            .expect('Content-Type', /json/);
+    });
 });
+
 
 
 afterAll(() => {

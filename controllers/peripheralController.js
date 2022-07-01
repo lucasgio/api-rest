@@ -1,7 +1,8 @@
-const { response, request } = require('express');
+const { response } = require('express');
 
 
 const Peripheral = require('../models/peripheral');
+
 
 const postPeripheral = async (req, res = response) => {
 
@@ -16,6 +17,21 @@ const postPeripheral = async (req, res = response) => {
     });
 }
 
+const getPeripheral = async (req,res = response) => {
+
+    const [peripheral, total] = await Promise.all([
+        Peripheral.find(),
+        Peripheral.countDocuments()
+    ])
+
+    res.status(200).json({
+        peripheral,
+        message: `There are ${ total } records listed`
+    });
+
+}
+
+
 
 
 
@@ -23,4 +39,5 @@ const postPeripheral = async (req, res = response) => {
 
 module.exports = {
     postPeripheral,
+    getPeripheral
 }
