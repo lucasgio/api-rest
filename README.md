@@ -1,31 +1,50 @@
 # Rest-API for test from Musala Soft
 API-REST build for the Javascript Developer test of Musala Soft company.
+
+
+
 ## Authors
 
 - [@lucasgio](https://www.github.com/lucasgio)
 
 
-## Badges
+## Tech Stack
 
-Add badges from somewhere like: [shields.io](https://shields.io/)
+**Server:** Node, Express, Dotenv,Jest,SuperTest
+
+
 
 [![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
 
+## Acknowledgements
 
+The local database environment must have mongoDB installed for your operating system. It is also used to manage MongoDB Compass databases.
+
+How to install Mongo DB local
+https://www.prisma.io/dataguide/mongodb/setting-up-a-local-mongodb-database
+
+https://www.mongodb.com/try/download/compass
 
 ## Installation
 
-Install my-project
+Install api-rest
 
 ```bash
   clone repository git clone https://github.com/lucasgio/node_api_rest_init.git
-  cd my-project
+  cd api-rest
   npm install  
+  cp .env.example .env
+  setting your local mongodb ( Mongo Compass )
+  npm run dev
 ```
 
-## Tech Stack
+## Running Tests
 
-**Server:** Node, Express, Dotenv
+To run tests, run the following command
+
+```bash
+  npm run test
+```
 
 
 ## API Reference
@@ -37,9 +56,6 @@ Install my-project
   GET /api/v1/getaway
 ```
 
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `limit` | `string`   | Limits the amount of resources displayed. |
 
 ####  Show one getaway
 ####  Displays a collection of the getaway given by parameter.
@@ -91,6 +107,13 @@ Install my-project
 | `id`        | `string` | **Required**. Id of getaway       |
 | `peripheral`| `string` | **Required**. Id of peripheral    |
 
+
+#### Get all peripheral
+#### Show a collection with all peripherals
+
+```http
+  GET /api/v1/peripherals
+```
 
 #### Post peripheral
 #### Store in DB a peripheral.
