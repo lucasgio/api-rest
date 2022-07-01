@@ -9,7 +9,7 @@ const {
     Peripheral
 } = require('./helpers/helper');
 
-process.env.NODE_ENV = 'testing'
+
 
 
 beforeEach(async () => {

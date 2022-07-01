@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --silent --watchAll --maxWorkers=1"
+    "dev": "cross-env NODE_ENV=development nodemon app.js",
+    "test": "cross-env NODE_ENV=testing jest --silent --watchAll --maxWorkers=1",
+    "start": "cross-env NODE_ENV=production node app.js"
   },
   "keywords": [],
   "author": "",

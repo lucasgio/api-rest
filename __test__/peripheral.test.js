@@ -4,7 +4,6 @@ const supertest = require('supertest');
 
 const { newPeripheral,Peripheral } = require('./helpers/helper');
 
-process.env.NODE_ENV='testing'
 
 
 beforeEach(async () => {
